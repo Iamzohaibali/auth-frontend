@@ -2,8 +2,6 @@
 
 A production-ready authentication frontend built with **React 18**, **Vite**, **Tailwind CSS v4**, and **Zustand**. Connects to the MERN Auth REST API for full-stack authentication with role-based access control.
 
-> Replace URLs below with your own deployed URLs.
-
 ---
 
 ## Table of Contents
