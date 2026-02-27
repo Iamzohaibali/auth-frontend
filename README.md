@@ -2,8 +2,7 @@
 
 A production-ready authentication frontend built with **React 18**, **Vite**, **Tailwind CSS v4**, and **Zustand**. Connects to the MERN Auth REST API for full-stack authentication with role-based access control.
 
-🔗 **Live Demo:** [https://auth-frontend-cozy.vercel.app](https://auth-frontend-cozy.vercel.app)  
-🔗 **Backend API:** [https://authentication-api-52878f3a16c3.herokuapp.com/api](https://authentication-api-52878f3a16c3.herokuapp.com/api)
+> Replace URLs below with your own deployed URLs.
 
 ---
 
@@ -39,7 +38,7 @@ A production-ready authentication frontend built with **React 18**, **Vite**, **
 
 ### Two-Factor Authentication
 - Enable or disable email-based OTP 2FA per account
-- OTP entry screen with masked email hint (e.g. `jo***@gmail.com`)
+- OTP entry screen with masked email hint (e.g. `us***@example.com`)
 - Auto-logout after enabling 2FA to force re-authentication
 - 2FA toggle blocked until email is verified
 
@@ -214,7 +213,7 @@ VITE_API_URL=http://localhost:5000/api
 
 **Production (Vercel Environment Variables):**
 ```env
-VITE_API_URL=https://authentication-api-52878f3a16c3.herokuapp.com/api
+VITE_API_URL=https://your-backend.herokuapp.com/api
 ```
 
 Set production variables in **Vercel Dashboard → Project → Settings → Environment Variables**. Never commit `.env` to version control.
@@ -463,7 +462,7 @@ vercel
 Add this environment variable in **Vercel Dashboard → Project → Settings → Environment Variables**:
 
 ```
-VITE_API_URL = https://authentication-api-52878f3a16c3.herokuapp.com/api
+VITE_API_URL = https://your-backend.herokuapp.com/api
 ```
 
 Then redeploy:
@@ -487,10 +486,10 @@ The `vercel.json` file prevents 404 errors when users refresh the page on non-ro
 Update the backend `CLIENT_URL` to your exact Vercel URL with no trailing slash:
 
 ```bash
-heroku config:set CLIENT_URL=https://auth-frontend-cozy.vercel.app \
-  --app authentication-api-52878f3a16c3
+heroku config:set CLIENT_URL=https://your-app.vercel.app \
+  --app your-heroku-app-name
 
-heroku restart --app authentication-api-52878f3a16c3
+heroku restart --app your-heroku-app-name
 ```
 
 ---
@@ -502,8 +501,8 @@ heroku restart --app authentication-api-52878f3a16c3
 The backend `CLIENT_URL` config var on Heroku still points to localhost. Fix it:
 
 ```bash
-heroku config:set CLIENT_URL=https://auth-frontend-cozy.vercel.app \
-  --app authentication-api-52878f3a16c3
+heroku config:set CLIENT_URL=https://your-app.vercel.app \
+  --app your-heroku-app-name
 ```
 
 Make sure there is no trailing slash at the end of the URL.
@@ -525,7 +524,7 @@ The Axios instance must not have a hardcoded `Content-Type: application/json` de
 The refresh token flow requires Redis (Upstash). Check backend logs for Redis connection errors:
 
 ```bash
-heroku logs --tail --app authentication-api-52878f3a16c3
+heroku logs --tail --app your-heroku-app-name
 ```
 
 ### Admin dropdown cut off at bottom of screen
